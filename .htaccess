@@ -1,0 +1,16 @@
+Options -Indexes
+IndexIgnore *
+# AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/x-javascript
+DirectoryIndex index.php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ index.php [L]
+
+
+RewriteRule ^Home$                      index.php?identificador=1
+RewriteRule ^Nosotros$                  index.php?identificador=2&pag=nosotros
+RewriteRule ^Contacto$                  index.php?identificador=3&pag=contacto
+RewriteRule ^Soluciones$                index.php?identificador=4&pag=soluciones
+RewriteRule ^Producto$                  index.php?identificador=5&pag=producto
+RewriteRule ^(.*)\_detalle$             index.php?identificador=6&pag=detalle&id=$1
